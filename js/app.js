@@ -44,9 +44,7 @@ let displayQuote = document.querySelector("#quote");
 let displayAuthor = document.querySelector(".author");
 
 btn.addEventListener('click',function(){
-  for(let i=0;i<quotes.length;i++){
-    var random = Math.floor(Math.random()*quotes.length);
-  }
+  let random = Math.floor(Math.random()*quotes.length);
   console.log(random);
 
   displayQuote.innerHTML=quotes[random].quote;
