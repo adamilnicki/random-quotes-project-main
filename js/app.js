@@ -1,44 +1,54 @@
-//immediate invoked function expression
-(function() {
-  const quotes = [
-    {
-      quote:
-        "Life is too short and sweet to be spent by cribbing and complaining about things. Here are some random quotes about the most wonderful gift that we've got",
-      author: " Life"
-    },
-    {
-      quote:
-        "Humor is richly rewarding to the person who employs it. It has some value in gaining and holding attention. But it has no persuasive value at all",
-      author: "John Kenneth Galbraith"
-    },
-    {
-      quote:
-        "God save me from my friends. I can protect myself from my enemies.",
-      author: "Claude Louis Hector de Villars "
-    },
-    {
-      quote: "The price of anything is the amount of life you exchange for it.",
-      author: "David Thoreau"
-    },
-    {
-      quote:
-        "Life is like a landscape. You live in the midst of it but can describe it only from the vantage point of distance. ",
-      author: "Charles Lindbergh"
-    },
-    {
-      quote:
-        "A critic is someone who never actually goes to the battle, yet who afterwards comes out shooting the wounded.",
-      author: " Tyne Daly"
-    }
-  ];
+//Object inside an array of quotes
+let quotes = [
+  {
+    quote: `Be yourself; everyone else is already taken.`,
+    author: "Oscar Wilde",
+  },
+  {
+    quote:
+      `Two things are infinite: the universe and human stupidity; 
+      and I'm not sure about the universe.`,
+    author: "Albert Einstein",
+  },
+  {
+    quote: `Be who you are and say what you feel,
+    because those who mind don't matter, and those who matter don't mind.`,
+    author: "Bernard M. Baruch",
+  },
+  {
+    quote: `You've gotta dance like there's nobody watching,
+    Love like you'll never be hurt,
+    Sing like there's nobody listening,
+    And live like it's heaven on earth.`,
+    author: "William W. Purkey",
+  },
+  {
+    quote: `You know you're in love when you can't fall asleep 
+    because reality is finally better than your dreams.`,
+    author: "Dr. Seuss",
+  },
+  {
+    quote: `Be the change that you wish to see in the world.`,
+    author: "Mahatma Gandhi",
+  },
+  {
+    quote: `Don’t walk in front of me… I may not follow
+    Don’t walk behind me… I may not lead
+    Walk beside me… just be my friend`,
+    author: "Albert Camus",
+  },
+];
 
-  const btn = document.getElementById("generate-btn");
+let btn = document.querySelector("#generate-btn");
+let displayQuote = document.querySelector("#quote");
+let displayAuthor = document.querySelector(".author");
 
-  btn.addEventListener("click", function() {
-    let random = Math.floor(Math.random() * quotes.length);
-    console.log(random);
+btn.addEventListener('click',function(){
+  for(let i=0;i<quotes.length;i++){
+    var random = Math.floor(Math.random()*quotes.length);
+  }
+  console.log(random);
 
-    document.getElementById("quote").textContent = quotes[random].quote;
-    document.querySelector(".author").textContent = quotes[random].author;
-  });
-})();
+  displayQuote.innerHTML=quotes[random].quote;
+  displayAuthor.innerHTML=quotes[random].author;
+});
